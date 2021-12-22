@@ -1,0 +1,54 @@
+@mixin respond-to($breakpoint) {
+    @if map-has-key($map: $breakpoints, $key: $breakpoint) {
+      $value: map-get(
+        $map: $breakpoints,
+        $key: $breakpoint,
+      );
+      @media screen and (max-width: $value) {
+        @content;
+      }
+    } @else {
+      @warn "$breakpoint không tồn tại trong $breakpoints";
+    }
+  }
+  @mixin tablet() {
+    @media screen and (min-width:$tablet-width ) and (max-width: #{$desktop-width - 1px}){
+      @content;
+    }
+  }
+  
+  @mixin desktop() {
+    @media screen and (min-width:$desktop-width ){
+      @content;
+    }
+  }
+  
+  
+  @mixin max ($breakpoint){
+    @media screen and (max-width:$breakpoint ){
+      @content;
+    }
+  }
+  
+  
+  @mixin min ($breakpoint){
+    @media screen and (min-width:$breakpoint){
+      @content;
+    }
+  }
+  
+  @mixin mobile() {
+    @media screen and (max-width:$mobile-width ){
+      @content;
+    }
+  }
+  
+  
+  @mixin overPlay (){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    transition: all .4s;
+    transform: translate(-50%,-50%);
+  }

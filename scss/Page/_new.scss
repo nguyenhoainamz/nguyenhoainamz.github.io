@@ -1,0 +1,31 @@
+.new {
+  font-family: "SF Text Regular";
+  padding-top: 53px;
+  p {
+    max-width: 800px;
+    margin:  10px auto;
+    font-family: "Roboto Slab";
+  }
+  img {
+    width: 90%;
+    max-height: 800px;
+    text-align: center;
+  }
+  &__title {
+    max-width: 800px;
+    text-align: center;
+    margin: auto;
+    font-family: "Roboto Slab";
+    font-size: 48px;
+  }
+  &__content {
+      margin-top:50px;
+  }
+}
+@include max(786px) {
+  .new {
+    &__title {
+      font-size: 24px;
+    }
+  }
+}

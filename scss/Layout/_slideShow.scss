@@ -1,0 +1,105 @@
+#SlideShow {
+  padding-top: 60px;
+  position: relative;
+  .slick__carousel {
+    .slick-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: transparent;
+      border: none;
+      width: 50px;
+      height: 100px;
+      z-index: 2;
+      opacity: 0.9;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      &.slick-prev {
+        background-image: url(/img/back-session.png);
+        left: 1%;
+      }
+      &.slick-next {
+        background-image: url(/img/next-session.png);
+        right: 1%;
+      }
+      &::before {
+        content: "";
+      }
+    }
+    .slick-dots {
+      bottom: 10%;
+      li {
+        button {
+          &::before {
+            font-size: 13px;
+            color: white;
+          }
+        }
+        &.slick-active {
+          button {
+            &::before {
+              color: #fb4226;
+            }
+          }
+        }
+      }
+    }
+    .item-carousel {
+      position: relative;
+      width: 100%;
+      .img-fluid {
+        width: 100%;
+      }
+      .btn-trailer {
+        position: absolute;
+        top: 50%;
+        border: none;
+        outline: none;
+        background: transparent;
+        cursor: pointer;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: none;
+        .img-fluid {
+          width: 70px;
+          opacity: 0.7;
+          transition: all 0.1s;
+          border-radius: 50%;
+        }
+        &:hover {
+          .img-fluid {
+            width: 80px;
+            opacity: 1;
+          }
+        }
+      }
+      &:hover {
+        .btn-trailer {
+          display: block;
+        }
+      }
+    }
+  }
+  @include respond-to("large") {
+    .slick__carousel{
+      .slick-arrow {
+        display: none !important;
+      }
+      .slick-dots{
+        li {
+          button {
+            &::before {
+              font-size: 10px;
+            }
+          }
+        }
+      }
+    }
+  }
+  @include respond-to("small") {
+    .slick__carousel{
+
+    }
+  }
+}

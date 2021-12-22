@@ -1,0 +1,206 @@
+#detail-movie {
+  .section {
+    background-color: #0a2029;
+    padding-top: 53px;
+
+    &__movie {
+      position: relative;
+
+      // background-image: url('../../img/rom.png');
+      &__bg {
+        @include min(1024px) {
+          height: calc(100vh - 53px);
+        }
+
+        img {
+          filter: blur(7px);
+          -webkit-filter: blur(7px);
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      &__info {
+        @include overPlay();
+        opacity: 1;
+
+        @include min(1024px) {
+          width: 70%;
+          max-width: 1024px;
+        }
+
+        @include max(578px) {
+          top: 20%;
+          left: 20%;
+          transform: translate(-20%, -20%);
+        }
+
+        .info-poster {
+          img {
+            max-width: 250px;
+            max-height: 350px;
+            width: 100%;
+          }
+
+          @include max(767px) {
+            display: none;
+          }
+        }
+
+        .movie-date {
+          color: white;
+          position: relative;
+
+          p {
+            white-space: nowrap;
+            margin: 0;
+
+            &:first-child {
+              font-size: 20px;
+            }
+
+            &:nth-child(2) {
+              font-size: 24px;
+              max-height: 30%;
+              letter-spacing: 2px;
+              max-width: 250px;
+
+              span {
+                &:first-child {
+                  background-color: #00ac4d;
+                  margin-right: 6px;
+                  margin-top: 6px;
+                  font-weight: 600;
+                  letter-spacing: 1px;
+                  color: #fff;
+                  font-size: 16px;
+                  border-radius: 4px;
+                  padding: 0 5px;
+                  display: inline-block;
+                  text-align: center;
+                  min-width: 33px;
+                }
+
+                &:last-child {
+                  padding-top: 2px;
+                }
+              }
+            }
+
+            &:last-child {
+              font-size: 15px;
+              height: 30%;
+            }
+          }
+          button {
+            position: absolute;
+            bottom: 0.5rem;
+            left: 0.5rem;
+            color: white;
+            font-weight: bold;
+            text-transform: none;
+            cursor: pointer;
+            background-color: #fb4226;
+            padding: 6px 16px;
+            font-size: 0.875rem;
+            min-width: 64px;
+            line-height: 1.75;
+            border-radius: 4px;
+            letter-spacing: 0.02857em;
+          }
+         }}
+          .cuiler {
+            .danhgia {
+              position: relative;
+              font-size: 126px;
+              width: 1em;
+              height: 1em;
+              border-radius: 50%;
+              margin: auto;
+              background-color: rgba(0, 0, 0, 0.4);
+
+              .ng-binding {
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                line-height: 2.4em;
+                font-size: 0.42em;
+                color: #fff;
+                display: block;
+                text-align: center;
+                white-space: nowrap;
+                transition-property: all;
+                transition-duration: 0.2s;
+                transition-timing-function: ease-out;
+              }
+
+              .slice {
+                position: absolute;
+                width: 1em;
+                height: 1em;
+
+                .bar {
+                  transform: rotate(0.52turn);
+                  position: absolute;
+                  border: 0.06em solid #7ed321;
+                  width: 1em;
+                  height: 1em;
+                  clip: rect(0, 0.5em, 1em, 0);
+                  border-radius: 50%;
+                  -webkit-transform: rotate(0.52turn);
+                }
+
+                .fill {
+                  transform: rotate(180deg);
+                }
+              }
+
+              @include max(375px) {
+                font-size: 90px;
+                width: 0.5em;
+                height: 0.5em;
+
+                .ng-binding {
+                  line-height: 1.4em;
+                  font-size: 0.32em;
+                }
+
+                .slice {
+                  width: 0.5em;
+                  height: 0.5em;
+
+                  .bar {
+                    width: 0.5em;
+                    height: 0.5em;
+                  }
+                }
+              }
+            }
+          }
+        
+         }
+
+      .info {
+        @include max(768px) {
+          width: 60%;
+        }
+
+        width: 50%;
+        margin: 0 auto;
+        color: white;
+
+        &__item {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+        }
+      }
+    
+  }
+}
